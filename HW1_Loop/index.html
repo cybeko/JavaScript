@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        // task 1
+        // let num = +prompt("Введите число:",);
+        // let sum = 0;
+
+        // for (let i = 1; i <= num; i++) 
+        // {
+        //     sum += i;
+        // }
+        // document.write(sum);
+
+        // task 2
+        // let num1 = +prompt("Введите первое число:",);
+        // let num2 = +prompt("Введите второе число:",);
+        // while (num1 !== num2) 
+        // {
+        //     if (num1 > num2) 
+        //     {
+        //         num1 = num1 - num2;
+        //     } 
+        //     else 
+        //     {
+        //         num2 = num2 - num1;
+        //     }
+        // }
+        // document.write(num1);
+
+        // task 3
+        // let num = +prompt("Введите число:",);
+
+        // for(let i=0; i<=num; i++)
+        // {
+        //     if(num%i==0)
+        //     {
+        //         document.write(i+"<br>");
+        //     }
+        // }
+
+        //task 4
+
+        // let num = +prompt("Введите число:",);
+        // let count=0;
+
+        // while(num!==0)
+        // {
+        //     num = num / 10 | 0;
+        //     count++;
+        // }
+        // document.write(count);
+
+
+        // alert(result ? "Число четное" : "Число нечетное");
+
+        //task 5
+
+        // let num;
+        // let pos=0;
+        // let neg=0;
+        // let even=0;
+        // let odd=0;
+        // for(let i=1; i<=10; i++)
+        // {
+        //     num = +prompt("Введите число:",);
+        //     if(num>0)
+        //     {
+        //         pos++;
+        //     }
+        //     else if (num < 0)
+        //     {
+        //         neg++;
+        //     }
+
+        //     if(num%2==0 && num!=0)
+        //     {
+        //         even++;
+        //     }
+        //     else if (num != 0)
+        //     {
+        //         odd++;
+        //     }
+        // }
+        // document.write("Positive: "+pos+"<br> Negative: "+neg+"<br>");
+        // document.write("Even: "+even+"<br> Odd: "+odd+"<br>");
+
+        // task 6
+
+        // let loop = true;
+        // while (loop) 
+        // {
+        //     let num1 = +prompt("Введите число 1:",);
+        //     let num2 = +prompt("Введите число 2:",);
+        //     let char = prompt("Введите знак (+, -, *, /):");
+        //     let res;
+
+        //     switch (char) 
+        //     {
+        //         case "+":
+        //             res = num1 + num2;
+        //             break;
+        //         case "-":
+        //             res = num1 - num2;
+        //             break;
+        //         case "*":
+        //             res = num1 * num2;
+        //             break;
+        //         case "/":
+        //             if (num2 !== 0) 
+        //             {
+        //                 res = num1 / num2;
+        //             } 
+        //             else 
+        //             {
+        //                 alert("На ноль делить невозможно");
+        //                 continue;
+        //             }
+        //             break;
+        //         default:
+        //             alert("Неправильный знак");
+        //             continue;
+        //     }
+        //     alert("Результат: " + res);
+        //     loop = confirm("Продолжить?");
+        // }
+
+        //task 7
+
+        // let num = +prompt("Введите число:",);
+        // let digitsAmount = +prompt("Введите на сколько сдвинуть:",);
+        // let string = num.toString();
+
+        // for(let i=1; i<=digitsAmount; i++)
+        // {
+        //     string = string.slice(1);
+        // }
+        // document.write(string);
+
+        // task 8
+
+        // let i = 0;
+        // do
+        // {
+        //     let week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        //     alert(week[i]);
+        //     var confirmed = confirm("Continue?");
+        //     i++;
+        //     if(i==week.length)
+        //     {
+        //         i=0;
+        //     }
+        // }while(confirmed)
+
+        // task 9
+
+        // for(let i=1; i<=10; i++)
+        // {
+        //     for(let j=1; j<=10; j++)
+        //     {
+        //         document.write(i + "*" + j + "=" + i*j + "<br>")
+        //     }
+        //     document.write("<br>")
+        // }
+
+        //task 10
+
+        // let userNum = +prompt("Загадайте число от 0 до 100:",);
+        // let maxRange = 100;
+        // let minRange = 0;
+
+        // if (userNum > maxRange || userNum < minRange) 
+        // {
+        //     alert("Wrong number. Try again");
+        // } 
+        // else 
+        // {
+        //     let loop = true;
+        //     do
+        //     {
+        //         let N = Math.floor((maxRange + minRange) / 2);
+        //         let userRange = prompt(`Ваше число > ${N}, < ${N} или == ${N}?`,);
+
+        //         switch (userRange) {
+        //             case ">":
+        //                 minRange = N + 1;
+        //                 break;
+        //             case "<":
+        //                 maxRange = N - 1;
+        //                 break;
+        //             case "==":
+        //                 alert(`Ваше число = ${N}`);
+        //                 loop = false;
+        //                 break;
+        //             default:
+        //                 alert("Неправильное число");
+        //                 break;
+        //         }
+        //     } while (loop);
+        // }
+        
+    </script>
+</body>
+</html>
