@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        let classroom = [
+            ["Classroom #1", 20, "Chemistry"],
+            ["Classroom #3", 12, "Philosophy"],
+            ["Classroom #2", 14, "Biology"],
+            ["Classroom #4", 19, "Biology"],
+        ];
+
+        function PrintAll(array)
+        {
+            for(let i in array)
+            {
+                document.write(array[i].join(", ")  + "<br>");
+            }
+        }
+        
+        function PrintByFaculty(array)
+        {
+            let userFaculty = prompt("Enter faculty to search the classroom for: ")
+            let isFind = false;
+            for(let i in array)
+            {
+                for(let j in array[i])
+                {
+                    if(array[i][j]==userFaculty)
+                    {
+                        document.write(br + array[i].join(", "));
+                        isFind=true;
+                    }
+                }
+            }
+            if(!isFind) 
+            {
+                document.write(br+"Classroom for this faculty not found.");
+            }
+            document.write(br);
+        }
+
+        function PrintByGroup(array, group)
+        {
+            let isFind = false;
+
+            for(let i in array)
+            {
+                if(array[i][1] >= group[1] && array[i][2] === group[2])
+                {
+                    document.write(br + array[i].join(", ") + br);
+                    isFind=true;
+                }
+            }
+            if(!isFind) 
+            {
+                document.write(br +"Classroom for this group not found.");
+            }
+        }
+
+        function SortBySeats(array)
+        {
+            let len = array.length;
+            for (let i = 0; i < len - 1; i++) 
+            {
+                for (let j = 0; j < len - 1; j++) 
+                {
+                    if (array[j][1] > array[j + 1][1]) 
+                    {
+                        let temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        function SortByClassroom(array)
+        {
+            let len = array.length;
+            for (let i = 0; i < len - 1; i++) 
+            {
+                for (let j = 0; j < len - 1; j++) 
+                {
+                    if (array[j][0] > array[j + 1][0]) 
+                    {
+                        let temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        let br = "<br>"
+
+        document.write("Printing all classrooms: " + br)
+        PrintAll(classroom);
+
+        document.write(br + "Printing classrooms by faculty: ")
+        PrintByFaculty(classroom);
+
+        let group = ["B-331", 15 ,"Biology"]
+        document.write(br + "Printing by group [B-331, 15 , Biology]: ")
+        PrintByGroup(classroom, group);
+
+        document.write(br + "Sorting array by seats: " + br)
+        SortBySeats(classroom);
+        PrintAll(classroom);
+
+        document.write(br + "Sorting array by classroom: " + br)
+        SortByClassroom(classroom);
+        PrintAll(classroom);
+
+    </script>
+</body>
+</html>
