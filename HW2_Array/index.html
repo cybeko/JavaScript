@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <script>
         //task 1
 
@@ -64,8 +65,8 @@
         //     }
         // }
 
-
         //task 2
+
         // let fullName = prompt("Enter your name: ");
         // let range = [
         //     [65, 90], 
@@ -115,133 +116,167 @@
         // }
 
         //task 4
-        let arr1 = [];
-        let arr2 = [];
 
-        function RandArr(arr)
-        {
-            for (let i = 0; i < 5; i++) 
-            {
-                arr[i] = Math.floor(Math.random() * 15);
-            }
-        }
-        function PrintArr(arr)
-        {     for (let i = 0; i < arr.length; i++) 
-            {
-                document.write("[" + arr[i]+"] ");
-            }
-            document.write("<br>");
-        }
+        // let arr1 = [];
+        // let arr2 = [];
 
-        function ArrNoRepeatFirst(arr1, arr2) 
-        {
-            let newArr = [];
+        // function RandArr(arr)
+        // {
+        //     for (let i = 0; i < 5; i++) 
+        //     {
+        //         arr[i] = Math.floor(Math.random() * 15);
+        //     }
+        // }
+        // function PrintArr(arr)
+        // {     for (let i = 0; i < arr.length; i++) 
+        //     {
+        //         document.write("[" + arr[i]+"] ");
+        //     }
+        //     document.write("<br>");
+        // }
 
-            for (let i = 0; i < arr1.length; i++) 
-            {
-                let isFind = false;
+        // function ArrNoRepeatFirst(arr1, arr2) 
+        // {
+        //     let newArr = [];
 
-                for (let j = 0; j < arr2.length; j++) 
-                {
-                    if (arr1[i] == arr2[j]) 
-                    {
-                        isFind = true;
-                        break;
-                    }
-                }
+        //     for (let i = 0; i < arr1.length; i++) 
+        //     {
+        //         let isFind = false;
 
-                if (!isFind) 
-                {
-                    if(!newArr.includes(arr1[i]))
-                    {
-                        newArr.push(arr1[i]);
-                    }
-                }
-            }
+        //         for (let j = 0; j < arr2.length; j++) 
+        //         {
+        //             if (arr1[i] == arr2[j]) 
+        //             {
+        //                 isFind = true;
+        //                 break;
+        //             }
+        //         }
 
-            if (newArr.length == 0) 
-            {
-                return "-";
-            } 
-            else 
-            {
-                return newArr;
-            }
-        }
-        function ArrNoRepeatCommon(arr1,arr2)
-        {
-            let newArr = [];
-            for (let i = 0; i < arr1.length; i++) 
-            {
-                for (let j = 0; j < arr2.length; j++) 
-                {
-                    if (arr1[i] == arr2[j]) 
-                    {
-                        if (!newArr.includes(arr1[i]))
-                        {
-                            newArr.push(arr1[i]);
-                        }
-                        break;
-                    }
-                }
-            }
-            if(newArr.length==0)
-            {
-                return "-";
-            }
-            else
-            {return newArr;}
-        }
-        function ArrNoRepeatAll(arr1,arr2)
-        {
-            let newArr = [];
+        //         if (!isFind) 
+        //         {
+        //             if(!newArr.includes(arr1[i]))
+        //             {
+        //                 newArr.push(arr1[i]);
+        //             }
+        //         }
+        //     }
 
-            for (let i = 0; i < arr1.length; i++) 
-            {
-                if (!newArr.includes(arr1[i])) 
-                {
-                    newArr.push(arr1[i]);
-                }
-            }
+        //     if (newArr.length == 0) 
+        //     {
+        //         return "-";
+        //     } 
+        //     else 
+        //     {
+        //         return newArr;
+        //     }
+        // }
+        // function ArrNoRepeatCommon(arr1,arr2)
+        // {
+        //     let newArr = [];
+        //     for (let i = 0; i < arr1.length; i++) 
+        //     {
+        //         for (let j = 0; j < arr2.length; j++) 
+        //         {
+        //             if (arr1[i] == arr2[j]) 
+        //             {
+        //                 if (!newArr.includes(arr1[i]))
+        //                 {
+        //                     newArr.push(arr1[i]);
+        //                 }
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //     if(newArr.length==0)
+        //     {
+        //         return "-";
+        //     }
+        //     else
+        //     {return newArr;}
+        // }
+        // function ArrNoRepeatAll(arr1,arr2)
+        // {
+        //     let newArr = [];
 
-            for (let j = 0; j < arr2.length; j++) 
-            {
-                if (!newArr.includes(arr2[j])) 
-                {
-                    newArr.push(arr2[j]);
-                }
-            }
+        //     for (let i = 0; i < arr1.length; i++) 
+        //     {
+        //         if (!newArr.includes(arr1[i])) 
+        //         {
+        //             newArr.push(arr1[i]);
+        //         }
+        //     }
 
-            if (newArr.length == 0) 
-            {
-                return "-";
-            } 
-            else 
-            {
-                return newArr;
-            }
+        //     for (let j = 0; j < arr2.length; j++) 
+        //     {
+        //         if (!newArr.includes(arr2[j])) 
+        //         {
+        //             newArr.push(arr2[j]);
+        //         }
+        //     }
 
-        }
+        //     if (newArr.length == 0) 
+        //     {
+        //         return "-";
+        //     } 
+        //     else 
+        //     {
+        //         return newArr;
+        //     }
+
+        // }
 
         
-        RandArr(arr1);
-        PrintArr(arr1);
+        // RandArr(arr1);
+        // PrintArr(arr1);
 
-        RandArr(arr2);
-        PrintArr(arr2);
+        // RandArr(arr2);
+        // PrintArr(arr2);
 
  
-        document.write("Общие эл.:<br>")
-        let result = ArrNoRepeatCommon(arr1, arr2);
-        PrintArr(result);
+        // document.write("Общие эл.:<br>")
+        // let result = ArrNoRepeatCommon(arr1, arr2);
+        // PrintArr(result);
 
-        document.write("Эл. из первого массива которых нет во втром:<br>")
-        result = ArrNoRepeatFirst(arr1, arr2);
-        PrintArr(result);
+        // document.write("Эл. из первого массива которых нет во втром:<br>")
+        // result = ArrNoRepeatFirst(arr1, arr2);
+        // PrintArr(result);
 
-        document.write("Все эл.:<br>")
-        result = ArrNoRepeatAll(arr1, arr2);
-        PrintArr(result);
+        // document.write("Все эл.:<br>")
+        // result = ArrNoRepeatAll(arr1, arr2);
+        // PrintArr(result);
+
+        // task 5
+
+        // let fruits = ["Apple", "Banana", "Orange", "Grape", "Kiwi", "Mango", 
+        // "Pear", "Pineapple", "Strawberry", "Watermelon"];
+        // function PrintArr(arr)
+        // {    
+        //     document.write('<ul style="list-style-type: decimal;">');
+        //     for (let i = 0; i < arr.length; i++) 
+        //     {
+        //         document.write("<li>" + arr[i] + "</li>");
+        //     }
+        //     document.write('</ul>');
+        // }
+        // function GetElement(arr)
+        // {
+        //     let userInput = prompt("Enter fruit to search:", );
+        //     for(let i= 0; i<arr.length; i++)
+        //     {
+        //         if(arr[i].toLowerCase()==userInput.toLowerCase())
+        //         {
+        //             return i;
+        //         }
+        //     }
+        //     return -1;
+        // }
+        // PrintArr(fruits);
+        // document.write("Sorted:<br>");
+        // fruits.sort();
+        // PrintArr(fruits);
+        // document.write(GetElement(fruits));
+
+
 
 
 
