@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //task 1
+
+        // let point = 2.5;
+        // let questions = [
+        //     ["Is the sky blue?", "yes", point],
+        //     ["Did the FBI kill Martin Luther King?", "yes", point],
+        //     ["Can you read?", "yes", point],
+        //     ["No?", "no", point],
+        // ];
+        // let answers = [];
+        // let userPoint;
+
+        // for (let i = 0; i < questions.length; i++) 
+        // {
+        //     let userCh = prompt(questions[i][0]);
+        //     let userCh_Lowercase = userCh.toLowerCase();
+        //     if(userCh_Lowercase==questions[i][1])
+        //     {
+        //         userPoint = questions[i][2];
+        //     }
+        //     else
+        //     {
+        //         userPoint = 0;
+        //     }
+        //     answers.push([userCh, userPoint]);
+        // }
+        // let result =0;
+        // for (let i = 0; i < answers.length; i++) 
+        // {
+        //     document.write("Answer: " + answers[i][0] + "; Point: " + answers[i][1] + "<br>");
+        //     result+=answers[i][1];
+        // }
+        // document.write("<br>Result: " + result);
+
+        //task 2
+
+        // let fullName = prompt("Enter your name: ",);
+        // let range = [
+        //     [65, 90],
+        //     [97, 122],
+        //     [48, 57],
+        //     [32, 32]
+        // ]
+        // for (let i = 0; i < fullName.length; i++) 
+        // {
+        //     let charCode = fullName.charCodeAt(i);
+
+        //     for(let j=0; j<range.length; j++)
+        //     {
+        //         if (charCode >= range[j][0] && charCode <= range[j][1]) 
+        //         {
+        //             isProhibited = false;
+        //             break;
+        //         }
+        //     }
+        // }
+
+
+        //task 2
+        // let fullName = prompt("Enter your name: ");
+        // let range = [
+        //     [65, 90], 
+        //     [97, 122], 
+        //     [48, 57], 
+        //     [32, 32]
+        // ];
+        // let prohSymbol = false;
+
+        // for (let i = 0; i < fullName.length; i++) 
+        // {
+        //     let charCode = fullName.charCodeAt(i);
+        //     let isProhibited = true;
+
+        //     for (let j = 0; j < range.length; j++) 
+        //     {
+        //         if (charCode >= range[j][0] && charCode <= range[j][1]) 
+        //         {
+        //             isProhibited = false;
+        //             break;
+        //         }
+        //     }
+        //     if (isProhibited)
+        //     {
+        //         prohSymbol = true;
+        //         alert("Name contains prohibited symbols.");
+        //         break;
+        //     }
+        // }
+
+        //task 3
+
+        // temp
+
+        // let temp = "empty";
+        // let arr = [
+        //     ["first", temp],
+        //     ["two", temp],
+        //     ["third", temp]
+        // ]
+        // let userInput = prompt("Enter word:", );
+
+
+        // for (let i = 0; i < arr.length; i++) 
+        // {
+        //     document.write(arr[i]+"<br>");
+        // }
+
+        //task 4
+        let arr1 = [];
+        let arr2 = [];
+
+        function RandArr(arr)
+        {
+            for (let i = 0; i < 5; i++) 
+            {
+                arr[i] = Math.floor(Math.random() * 15);
+            }
+        }
+        function PrintArr(arr)
+        {     for (let i = 0; i < arr.length; i++) 
+            {
+                document.write("[" + arr[i]+"] ");
+            }
+            document.write("<br>");
+        }
+
+        function ArrNoRepeatFirst(arr1, arr2) 
+        {
+            let newArr = [];
+
+            for (let i = 0; i < arr1.length; i++) 
+            {
+                let isFind = false;
+
+                for (let j = 0; j < arr2.length; j++) 
+                {
+                    if (arr1[i] == arr2[j]) 
+                    {
+                        isFind = true;
+                        break;
+                    }
+                }
+
+                if (!isFind) 
+                {
+                    if(!newArr.includes(arr1[i]))
+                    {
+                        newArr.push(arr1[i]);
+                    }
+                }
+            }
+
+            if (newArr.length == 0) 
+            {
+                return "-";
+            } 
+            else 
+            {
+                return newArr;
+            }
+        }
+        function ArrNoRepeatCommon(arr1,arr2)
+        {
+            let newArr = [];
+            for (let i = 0; i < arr1.length; i++) 
+            {
+                for (let j = 0; j < arr2.length; j++) 
+                {
+                    if (arr1[i] == arr2[j]) 
+                    {
+                        if (!newArr.includes(arr1[i]))
+                        {
+                            newArr.push(arr1[i]);
+                        }
+                        break;
+                    }
+                }
+            }
+            if(newArr.length==0)
+            {
+                return "-";
+            }
+            else
+            {return newArr;}
+        }
+        function ArrNoRepeatAll(arr1,arr2)
+        {
+            let newArr = [];
+
+            for (let i = 0; i < arr1.length; i++) 
+            {
+                if (!newArr.includes(arr1[i])) 
+                {
+                    newArr.push(arr1[i]);
+                }
+            }
+
+            for (let j = 0; j < arr2.length; j++) 
+            {
+                if (!newArr.includes(arr2[j])) 
+                {
+                    newArr.push(arr2[j]);
+                }
+            }
+
+            if (newArr.length == 0) 
+            {
+                return "-";
+            } 
+            else 
+            {
+                return newArr;
+            }
+
+        }
+
+        
+        RandArr(arr1);
+        PrintArr(arr1);
+
+        RandArr(arr2);
+        PrintArr(arr2);
+
+ 
+        document.write("Общие эл.:<br>")
+        let result = ArrNoRepeatCommon(arr1, arr2);
+        PrintArr(result);
+
+        document.write("Эл. из первого массива которых нет во втром:<br>")
+        result = ArrNoRepeatFirst(arr1, arr2);
+        PrintArr(result);
+
+        document.write("Все эл.:<br>")
+        result = ArrNoRepeatAll(arr1, arr2);
+        PrintArr(result);
+
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>
