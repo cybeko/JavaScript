@@ -7,7 +7,7 @@ function Car(manufacturer, model, year, speed)
     this.year = year;
     this.speed = speed;
 
-    this.showStats = function (element) 
+    this.showStats = function() 
     {
         document.write(`Manufacturer: ${this.manufacturer}<br/>`);
         document.write(`Model: ${this.model}<br/>`);
