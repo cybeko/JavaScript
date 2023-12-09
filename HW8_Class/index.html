@@ -6,9 +6,17 @@
     <title>Document</title>
 </head>
 <body>
+    <ul id="task1">
+        <li id="date"></li>
+        <li id="isPassed"></li>
+        <li id="isLeapYear"></li>
+        <li id="nextDate"></li>
+      </ul>
+
+      <p id = "marker"></p>
+      <p id = "ref_marker"></p>
 
     <script>
-
         //task 1
         class ExtendedDate extends Date 
         {
@@ -26,7 +34,7 @@
             }
             printDate() 
             {
-                document.write(`${this.day}.${this.month}.${this.year}`);
+                return `${this.day}.${this.month}.${this.year}`;
             }
             isPassed() 
             {
@@ -58,21 +66,20 @@
                 const year = this.year;
                 return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
             }
-            getThisDate() 
+            getNextDate() 
             {
                 const nextDate = new Date(this.year, this.month - 1, this.day + 1);
                 return new ExtendedDate(`${nextDate.getDate()}.${nextDate.getMonth() + 1}.${nextDate.getFullYear()}`);
             }
         }
-        // let obj = new ExtendedDate("5.12.2023");
-        // obj.printDate();
-        // document.write('<br>Is Passed: ' + obj.isPassed());
-        // document.write('<br>Is Leap Year: ' + obj.isLeapYear());
-        // const nextDateObj = obj.getThisDate();
-        // document.write('<br>This Date: ');
-        // nextDateObj.printDate();
+        let obj = new ExtendedDate("5.12.2023");
+        document.getElementById("task1").style.listStyleType = "none";
+        document.getElementById("date").textContent = `Date: ${obj.printDate()}`;
+        document.getElementById("isPassed").textContent = `Is Passed: ${obj.isPassed()}`;
+        document.getElementById("isLeapYear").textContent = `Is Leap Year: ${obj.isLeapYear()}`;
+        let nextDateObj = obj.getNextDate();
+        document.getElementById("nextDate").textContent = `Next Date: ${nextDateObj.printDate()}`;
 
-    
         //task 2
         class Marker 
         {
@@ -133,6 +140,7 @@
                 this.inkPercent = 100;
             }
         }
+
         let marker = new Marker();
         marker.Write("Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, aperiam. Perferendis ullam reprehenderit nobis. A quod soluta, suscipit quo ullam repellendus delectus assumenda! Earum reiciendis deserunt cum quidem necessitatibus saepe?");
         document.write("<br><br>")
