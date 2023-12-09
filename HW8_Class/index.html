@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //task 1
+        class ExtendedDate extends Date 
+        {
+            day;
+            month;
+            year;
+
+            constructor(u_str) 
+            {
+                super();
+                const dateArr = u_str.split('.');
+                this.day = parseInt(dateArr[0]);
+                this.month = parseInt(dateArr[1]);
+                this.year = parseInt(dateArr[2]);
+            }
+            printDate() 
+            {
+                document.write(`${this.day}.${this.month}.${this.year}`);
+            }
+            isPassed() 
+            {
+                const curDate = new Date();
+                const curDay = curDate.getDate();
+                const curMonth = curDate.getMonth() + 1;
+                const curYear = curDate.getFullYear();
+
+                if (curYear > this.year) 
+                {
+                    return true;
+                } 
+
+                else if (curYear === this.year) 
+                {
+                    if (curMonth > this.month) 
+                    {
+                        return true;
+                    } 
+                    else if (curMonth === this.month) 
+                    {
+                        return curDay > this.day;
+                    }
+                }
+                return false;
+            }
+            isLeapYear() 
+            {
+                const year = this.year;
+                return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            }
+            getThisDate() 
+            {
+                const nextDate = new Date(this.year, this.month - 1, this.day + 1);
+                return new ExtendedDate(`${nextDate.getDate()}.${nextDate.getMonth() + 1}.${nextDate.getFullYear()}`);
+            }
+        }
+        // let obj = new ExtendedDate("5.12.2023");
+        // obj.printDate();
+        // document.write('<br>Is Passed: ' + obj.isPassed());
+        // document.write('<br>Is Leap Year: ' + obj.isLeapYear());
+        // const nextDateObj = obj.getThisDate();
+        // document.write('<br>This Date: ');
+        // nextDateObj.printDate();
+
+    
+        //task 2
+        class Marker 
+        {
+            color;
+            inkPercent;
+            charIndex;
+            string;
+
+            constructor() 
+            {
+                this.color = 'blue';
+                this.inkPercent = 100;
+                this.charIndex = 0;
+            }
+
+            Write(u_str) 
+            {
+                if (u_str !== undefined) 
+                {
+                    this.string = u_str;
+                    this.charIndex = 0;
+                }
+
+                document.write(`<span style="color: ${this.color};">`);
+
+                for (let i = this.charIndex; i < this.string.length; i++) 
+                {
+                    if (this.inkPercent > 0) 
+                    {
+                        let currentChar = this.string[i];
+                        document.write(currentChar);
+
+                        if (currentChar !== "") 
+                        {
+                            this.inkPercent -= 0.5;
+                            this.charIndex++;
+                        }
+                    } 
+                    else 
+                    {
+                        document.write(`</span>`);
+                        document.write("[Not enough ink!]");
+                        return 0;
+                    }
+                }
+            }
+        }
+
+        class RefillableMarker extends Marker 
+        {
+            constructor() 
+            {
+                super();
+            }
+
+            Refill() 
+            {
+                this.inkPercent = 100;
+            }
+        }
+        let marker = new Marker();
+        marker.Write("Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, aperiam. Perferendis ullam reprehenderit nobis. A quod soluta, suscipit quo ullam repellendus delectus assumenda! Earum reiciendis deserunt cum quidem necessitatibus saepe?");
+        document.write("<br><br>")
+
+        let r_marker = new RefillableMarker();
+        r_marker.Write("Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, aperiam. Perferendis ullam reprehenderit nobis. A quod soluta, suscipit quo ullam repellendus delectus assumenda! Earum reiciendis deserunt cum quidem necessitatibus saepe? ");
+        r_marker.Refill();
+        r_marker.Write();
+        r_marker.Write("+ New string");
+    </script>
+</body>
+</html>
