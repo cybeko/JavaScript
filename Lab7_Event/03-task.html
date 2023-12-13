@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+    
+        let divElements = document.querySelectorAll('div');
+        document.addEventListener("keydown", addRedBorder);
+
+        document.addEventListener("keydown", function(e)
+            {
+                if (e.ctrlKey)
+                {
+                    if (e.code === "KeyA") 
+                        event.preventDefault(); //отменить дефолтное поведение для ctrl + a
+                }
+            }
+        );
+        function addRedBorder(e) 
+        {
+            let redBorder = "2px solid red";
+            let none = "none";
+
+            if (e.ctrlKey && e.code == "KeyA") 
+            {
+                divElements.forEach(divElements => 
+                {
+                    if(divElements.style.border != redBorder)
+                        divElements.style.border = redBorder;
+                    else
+                        divElements.style.border = none;
+                });
+            } 
+            else 
+            {
+                if (e.code === "Digit1" || e.code === "Digit2" || e.code === "Digit3") 
+                {
+                    let i = parseInt(e.code.charAt(5)) - 1;
+                    if(divElements[i].style.border != redBorder)
+                        divElements[i].style.border = redBorder;
+                    else
+                        divElements[i].style.border = none;
+                }
+            }
+        }
+        
+        /*
+        Задание:
+        Реализуйте сценарий, который при нажатии на клавиши 1, 2 или 3 на клавиатуре
+        будет добавлять рамку красного цвета на соответствующий div. 
+        
+        Если зажаты клавиши Ctrl + A, то красная рамка добавляется сразу
+        для всех div
+        */
+
+    </script>
+</body>
+
+</html>
