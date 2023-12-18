@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 04</title>
+    <style>
+        table
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid black;
+        }
+        .true
+        {
+            background-color: rgb(206, 255, 206);
+        }
+        .false
+        {
+            background-color: rgb(255, 214, 214);
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+        <tbody></tbody>
+    </table>
+
+    <script>   
+        let table = document.querySelector("#table");
+        let url = "https://jsonplaceholder.typicode.com/todos";
+
+        function createHeaders() 
+        {
+            let thead = table.createTHead();
+            let row = thead.insertRow();
+            let headers = ["User ID", "ID", "Title", "Completed"];
+
+            headers.forEach(headerText => {
+                let th = document.createElement("th");
+                let text = document.createTextNode(headerText);
+                th.appendChild(text);
+                row.appendChild(th);
+            });
+        }
+        function fillTable() {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(todo => {
+                        let row = table.insertRow();
+                        row.insertCell(0).textContent = todo.userId;
+                        row.insertCell(1).textContent = todo.id;
+                        row.insertCell(2).textContent = todo.title;
+                        row.insertCell(3).textContent = todo.completed;
+
+                        if(todo.completed)
+                        {
+                            row.classList.add("true");
+                        }
+                        else
+                        {
+                            row.classList.add("false");
+                        }
+                    });
+                })
+                .catch(error => console.error("Error:", error));
+        }
+
+        window.addEventListener("load", function () 
+        {
+            createHeaders();
+            fillTable();
+        });
+    </script>
+</body>
+
+</html>
