@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
+</head>
+<body style="background-color: rgb(141, 213, 255);">
+    <div id="container">
+        <input type="text" name="userCity" id="userCity" value="Одесса">
+        <h1>Прогноз погоды: <span id=city></span></h1>
+
+        <div id="block">
+            <div id="row" class="row-upper">
+                <div id="weather"></div>
+            </div>
+            <div id="row" class="row-lower">
+                <div id="weather"></div>
+                <div id="weather"></div>
+                <div id="weather"></div>
+                <div id="weather"></div>
+            </div>
+        </div>
+    </div>
+    
+    <input id="but1" type="button" value="Начать анимацию"/>
+    <div id="sun"></div>
+    <div id="moon">
+        <div class="overlay"></div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () 
+            {
+                $("#but1").click(function () 
+                {
+                    $("#sun").animate({ top: 270 },3000);
+                    $("body").animate({backgroundColor: ' #e6736b'}, 1500)
+                    $("body").animate({backgroundColor: '#4B3D60'}, 1000)
+                    $("body").animate({backgroundColor: 'rgb(10, 49, 82)'}, 1000)
+                    $("#moon").animate({ top: -250 },3000)
+                    $("body").animate({backgroundColor: 'rgb(141, 213, 255)'}, 3000)
+                    $("#sun").animate({ top: 0 },3000);
+                    $("#moon").animate({ top: 0 },3000);
+                });
+            });
+    </script>
+</body>
+</html>

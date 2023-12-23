@@ -1,0 +1,144 @@
+*
+{
+    /* outline: 1px solid red; */
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#container
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    z-index: 9;
+
+}
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#userCity
+{
+    width: 25vw;
+    height: 30px;
+    font-size: 1.2em;
+    padding: 20px 5px 20px;
+}
+#block
+{
+    width: 60vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#row
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+#weather
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+}
+    #weather p
+    {
+        font-size: 1.1em;
+        text-transform: capitalize;
+    }
+    #weather .row
+    {
+        width: 100%;
+        display: flex;
+    }
+    .row-lower
+    {
+        height: 70%;
+    }
+        .row-lower #weather
+        {
+            flex-direction: column;
+            background-color: rgb(148, 159, 168);
+        }
+
+    .row-upper #weather
+    {
+        background-color:rgb(148, 159, 168);
+        font-size: 1.6em;
+        align-items: center;
+        justify-content: space-around;
+    }
+        img
+        {
+            width: 64px;
+            border-radius: 10px;
+        }
+        .row-lower #weather img
+        {
+            background-color: rgb(182, 195, 206);
+        }
+        .row-upper #weather img
+        {
+            background-color:rgb(182, 195, 206);
+
+        }
+        
+@media screen and (max-width: 1000px)
+{
+    #block
+    {
+        width: 90vw;
+    }
+}
+
+#sun
+{
+    margin-top: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 40px rgb(255, 255, 255);
+    border-radius: 100px;
+    position: absolute;
+}
+#moon
+{
+    margin-top: 300px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 40px rgb(255, 255, 255);
+    border-radius: 100px;
+    position: absolute;
+    overflow: hidden;
+}
+#moon .overlay
+{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(223, 223, 223);
+    border-radius: 100px;
+    margin-left: 12px;
+    position: absolute;
+}
+/* html, body {
+    height: 100%;
+    margin: 0;
+} */
+
+/* body 
+{
+    background-color: rgb(141, 213, 255);
+} */
